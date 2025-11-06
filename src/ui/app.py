@@ -1,12 +1,14 @@
-import streamlit as st
-from pathlib import Path
-import tempfile
 import os
+import tempfile
+from pathlib import Path
+
+import streamlit as st
 from dotenv import load_dotenv
-from src.text.whisper import download_youtube_audio, transcribe_audio
+
 from src.llm.gemini_analyzer import extract_key_points_with_timestamps
-from src.util.video_utils import download_youtube_video, create_highlight_video
 from src.util.file_utils import load_video_extensions
+from src.util.video_utils import create_highlight_video, download_youtube_video
+from text.transcription import download_youtube_audio, transcribe_audio
 
 load_dotenv()
 
